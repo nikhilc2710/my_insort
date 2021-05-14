@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future result(String url, _count) async {
     print(url);
     final http.Response response = await http.post(
-      'http://a2c694065a3a.ngrok.io',
+      'https://finalyearnlp.herokuapp.com',
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -185,11 +185,9 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         pages++;
       });
-      if (_uri.text.startsWith("https://www.zdnet.com/")){
-      result(articles[page]['nextpage'], '');}
-      else{
-        return;
-      }
+
+      result(articles[page]['nextpage'], '');
+
     }
     // print("Previous page: $previousPage");
   }
